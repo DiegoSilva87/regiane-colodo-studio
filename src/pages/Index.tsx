@@ -1,13 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import QuemSouSection from "@/components/QuemSouSection";
+import PsicologiaSection from "@/components/PsicologiaSection";
+import NeuropsicologiaSection from "@/components/NeuropsicologiaSection";
+import ConsultoriaSection from "@/components/ConsultoriaSection";
+import PalestrasSection from "@/components/PalestrasSection";
+import DepoimentosSection from "@/components/DepoimentosSection";
+import ContatoSection from "@/components/ContatoSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+        <QuemSouSection />
+        <PsicologiaSection />
+        <NeuropsicologiaSection />
+        <ConsultoriaSection />
+        <PalestrasSection />
+        <DepoimentosSection />
+        <ContatoSection />
+      </main>
+      <Footer />
+    </>
   );
 };
 
