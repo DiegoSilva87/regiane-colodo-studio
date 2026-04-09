@@ -17,99 +17,100 @@ const photos = [
 
 export default function PalestrasSection() {
   return (
-    <section id="palestras" className="py-24 lg:py-32 bg-background">
+    <section id="palestras" className="py-24 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <FadeInSection>
-          <p className="font-sans-body text-sm tracking-[0.3em] uppercase text-primary/60 text-center mb-4">
-            Palestras
-          </p>
-          <h2 className="font-serif-display text-3xl md:text-5xl font-light text-foreground text-center mb-6 max-w-4xl mx-auto">
-            Palestras Corporativas | Saúde Emocional & Performance
-          </h2>
-        </FadeInSection>
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left — Text content */}
+          <FadeInSection>
+            <div className="space-y-8">
+              <div>
+                <p className="font-sans-body text-sm tracking-[0.3em] uppercase text-primary/50 mb-4">
+                  Palestras
+                </p>
+                <h2 className="font-serif-display text-4xl md:text-5xl lg:text-[3.4rem] font-light text-foreground leading-[1.1] mb-3">
+                  Palestras Corporativas
+                </h2>
+                <p className="font-serif-display text-2xl md:text-3xl font-light text-gold italic">
+                  Saúde Emocional & Performance
+                </p>
+              </div>
 
-        {/* Text content */}
-        <FadeInSection delay={0.1}>
-          <div className="max-w-3xl mx-auto mb-20 space-y-6">
-            <p className="font-sans-body text-foreground/70 leading-relaxed text-center">
-              Ofereço palestras corporativas voltadas ao desenvolvimento da saúde emocional no ambiente de trabalho, contribuindo diretamente para o bem-estar, engajamento e produtividade das equipes.
-            </p>
-            <p className="font-sans-body text-foreground/70 leading-relaxed text-center">
-              Os conteúdos são personalizados de acordo com a realidade e necessidade de cada empresa, podendo abordar temas como: burnout, saúde mental, prevenção ao suicídio (Setembro Amarelo), campanhas como Outubro Rosa, Novembro Azul, Janeiro Branco, além de datas como Dia das Mulheres, Dia das Mães e Dia dos Homens.
-            </p>
-            <p className="font-sans-body text-foreground/70 leading-relaxed text-center">
-              Também trabalho temas como dependências (química e comportamental), regulação emocional, autocuidado, equilíbrio entre vida pessoal e profissional e estratégias práticas para aumento de performance com saúde.
-            </p>
-            <p className="font-sans-body text-foreground/70 leading-relaxed text-center">
-              Cada palestra é construída em parceria com a empresa, com linguagem acessível, aplicabilidade prática e foco em promover consciência, responsabilidade emocional e mudança real no dia a dia dos colaboradores.
-            </p>
-          </div>
-        </FadeInSection>
+              <div className="w-16 h-px bg-primary/20" />
 
-        {/* Photo grid — bento-style layout */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[240px]">
-          {/* Large — spans 2 cols & 2 rows */}
-          <FadeInSection delay={0} className="col-span-2 row-span-2">
-            <div className="w-full h-full overflow-hidden rounded-sm group cursor-pointer">
-              <img
-                src={photos[0].src}
-                alt={photos[0].alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 group-hover:brightness-90"
-              />
+              <div className="space-y-5">
+                <p className="font-sans-body text-foreground/70 leading-[1.85] text-[0.95rem]">
+                  Ofereço palestras corporativas voltadas ao desenvolvimento da saúde emocional no ambiente de trabalho, contribuindo diretamente para o bem-estar, engajamento e produtividade das equipes.
+                </p>
+                <p className="font-sans-body text-foreground/70 leading-[1.85] text-[0.95rem]">
+                  Os conteúdos são personalizados de acordo com a realidade e necessidade de cada empresa, podendo abordar temas como: burnout, saúde mental, prevenção ao suicídio (Setembro Amarelo), campanhas como Outubro Rosa, Novembro Azul, Janeiro Branco, além de datas como Dia das Mulheres, Dia das Mães e Dia dos Homens.
+                </p>
+                <p className="font-sans-body text-foreground/70 leading-[1.85] text-[0.95rem]">
+                  Também trabalho temas como dependências (química e comportamental), regulação emocional, autocuidado, equilíbrio entre vida pessoal e profissional e estratégias práticas para aumento de performance com saúde.
+                </p>
+                <p className="font-sans-body text-foreground/70 leading-[1.85] text-[0.95rem]">
+                  Cada palestra é construída em parceria com a empresa, com linguagem acessível, aplicabilidade prática e foco em promover consciência, responsabilidade emocional e mudança real no dia a dia dos colaboradores.
+                </p>
+              </div>
             </div>
           </FadeInSection>
 
-          {/* Top right */}
-          <FadeInSection delay={0.1} className="col-span-1">
-            <div className="w-full h-full overflow-hidden rounded-sm group cursor-pointer">
-              <img
-                src={photos[1].src}
-                alt={photos[1].alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 group-hover:brightness-90"
-              />
-            </div>
-          </FadeInSection>
+          {/* Right — Photo collage */}
+          <FadeInSection delay={0.15}>
+            <div className="grid grid-cols-6 grid-rows-[repeat(4,minmax(0,1fr))] gap-3 h-[560px] md:h-[640px] lg:h-[700px]">
+              {/* Large hero photo — top left, 4 cols × 2 rows */}
+              <div className="col-span-4 row-span-2 overflow-hidden rounded-2xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-500">
+                <img
+                  src={photos[0].src}
+                  alt={photos[0].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
 
-          <FadeInSection delay={0.15} className="col-span-1">
-            <div className="w-full h-full overflow-hidden rounded-sm group cursor-pointer">
-              <img
-                src={photos[2].src}
-                alt={photos[2].alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 group-hover:brightness-90"
-              />
-            </div>
-          </FadeInSection>
+              {/* Top right — 2 cols × 1 row */}
+              <div className="col-span-2 row-span-1 overflow-hidden rounded-2xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-500">
+                <img
+                  src={photos[1].src}
+                  alt={photos[1].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
 
-          {/* Bottom right */}
-          <FadeInSection delay={0.2} className="col-span-1">
-            <div className="w-full h-full overflow-hidden rounded-sm group cursor-pointer">
-              <img
-                src={photos[3].src}
-                alt={photos[3].alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 group-hover:brightness-90"
-              />
-            </div>
-          </FadeInSection>
+              {/* Mid right — 2 cols × 1 row */}
+              <div className="col-span-2 row-span-1 overflow-hidden rounded-2xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-500">
+                <img
+                  src={photos[2].src}
+                  alt={photos[2].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
 
-          <FadeInSection delay={0.25} className="col-span-1">
-            <div className="w-full h-full overflow-hidden rounded-sm group cursor-pointer">
-              <img
-                src={photos[4].src}
-                alt={photos[4].alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 group-hover:brightness-90"
-              />
-            </div>
-          </FadeInSection>
+              {/* Bottom left — 3 cols × 2 rows */}
+              <div className="col-span-3 row-span-2 overflow-hidden rounded-2xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-500">
+                <img
+                  src={photos[3].src}
+                  alt={photos[3].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
 
-          {/* Full-width bottom */}
-          <FadeInSection delay={0.3} className="col-span-2 md:col-span-4">
-            <div className="w-full h-full overflow-hidden rounded-sm group cursor-pointer">
-              <img
-                src={photos[5].src}
-                alt={photos[5].alt}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 group-hover:brightness-90"
-              />
+              {/* Bottom mid — 3 cols × 1 row */}
+              <div className="col-span-3 row-span-1 overflow-hidden rounded-2xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-500">
+                <img
+                  src={photos[4].src}
+                  alt={photos[4].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Bottom right — 3 cols × 1 row (uses remaining space) */}
+              <div className="col-span-3 row-span-1 overflow-hidden rounded-2xl group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-500">
+                <img
+                  src={photos[5].src}
+                  alt={photos[5].alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
           </FadeInSection>
         </div>
